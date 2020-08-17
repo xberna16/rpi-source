@@ -319,6 +319,18 @@ def check_bc():
     if not os.path.exists('/usr/bin/bc'):
         fail("bc is NOT installed. Needed by 'make modules_prepare'. On Raspbian, run 'sudo apt-get install bc' to install it.")
 
+def check_ssl():
+    if not os.path.exists('/usr/include/openssl'):
+        fail("libssl-dev is NOT installed. Needed by 'make modules_prepare'. On Raspbian, run 'sudo apt-get install libssl-dev' to install it.")
+
+def check_bison():
+    if not os.path.exists('/usr/bin/bison'):
+        fail("bison is NOT installed. Needed by 'make modules_prepare'. On Raspbian, run 'sudo apt-get install bison' to install it.")
+        
+def check_flex():
+    if not os.path.exists('/usr/bin/flex'):
+        fail("flex is NOT installed. Needed by 'make modules_prepare'. On Raspbian, run 'sudo apt-get install flex' to install it.")
+
 ##############################################################################
 
 processor_type = get_processor_type()
